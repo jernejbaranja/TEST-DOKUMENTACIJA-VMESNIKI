@@ -1,0 +1,6 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <soapenv:Body>
+      <getListMeseciEBolRes xmlns="http://www.src.si/schemas/evem/ndm/wsdl/20160107"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<ebol:GetListMeseciResponse xmlns:ebol="http://zzzs.si/b2b/nvg/ZzzsEBOLService" xmlns:wsg="http://zzzs.si/b2b/nsk/wsGlobalTypes"><Glava><Sporocilo><wsg:IdSporocila>577758</wsg:IdSporocila><wsg:VerzijaSporocila>1</wsg:VerzijaSporocila><wsg:StatusIzmenjave>1</wsg:StatusIzmenjave><wsg:SifraSpletneStoritve>49</wsg:SifraSpletneStoritve><wsg:SifraMetodeSpletneStoritve>1</wsg:SifraMetodeSpletneStoritve><wsg:DatumInCas>2019-12-10T08:22:52.982+01:00</wsg:DatumInCas></Sporocilo><UspesnostIzvedbe><VseOk>true</VseOk></UspesnostIzvedbe></Glava><Telo><LetoMesec><Leto>2019</Leto><Mesec Id="9">SEPTEMBER</Mesec><StRednihEBol>4</StRednihEBol><StPreklicanihEBol>1</StPreklicanihEBol></LetoMesec><LetoMesec><Leto>2019</Leto><Mesec Id="10">OKTOBER</Mesec><StRednihEBol>12</StRednihEBol><StPreklicanihEBol>1</StPreklicanihEBol></LetoMesec></Telo></ebol:GetListMeseciResponse>]]></getListMeseciEBolRes>
+   </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,127 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.src.si/schemas/evem/ndm/wsdl/20160107">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ns:getEBolPDF><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ebol:GetEBOLResponse xmlns:ebol="http://zzzs.si/b2b/nvg/ZzzsEBOLService" xmlns:wsg="http://zzzs.si/b2b/nsk/wsGlobalTypes">
+	<Glava>
+		<Sporocilo>
+			<wsg:IdSporocila>1234567890</wsg:IdSporocila>
+			<wsg:VerzijaSporocila>1</wsg:VerzijaSporocila>
+			<wsg:StatusIzmenjave>1</wsg:StatusIzmenjave>
+			<wsg:SifraSpletneStoritve>49</wsg:SifraSpletneStoritve>
+			<wsg:SifraMetodeSpletneStoritve>3</wsg:SifraMetodeSpletneStoritve>
+			<wsg:DatumInCas>2019-08-29T11:40:16.345+02:00</wsg:DatumInCas>
+		</Sporocilo>
+		<UspesnostIzvedbe>
+			<VseOk>true</VseOk>
+		</UspesnostIzvedbe>
+	</Glava>
+	<Telo>
+		<EBOLi>
+			<EBOL Id="1000067" OznakaBolniskegaLista="1" VrstaBolniskegaLista="Z">
+				<Vsebina><![CDATA[
+					<onlC:PotrdiloOZadrzanostiOdDela xmlns:onlC="http://zzzs.si/b2b/onl/0001/DataTypes/ONLComplexDataType">
+						<Podatki id="RND-7e4ba1d0-ecdc-448a-b649-bfe5b10b3588">
+							<StevilkaPotrdilaOZadrzanostiOdDela>1000067</StevilkaPotrdilaOZadrzanostiOdDela>
+							<Izvajalec>
+								<ZZZSStevilka>102320</ZZZSStevilka>
+								<RIZDDZStevilka>07317</RIZDDZStevilka>
+								<NazivIzvajalca>ZDRAVSTVENI DOM TRBOVLJE</NazivIzvajalca>
+							</Izvajalec>
+							<Zdravnik>
+								<RIZDDZStevilka>99897</RIZDDZStevilka>
+								<SifraVrsteZdravnika sifra="2"/>
+								<ImeZdravnika>
+									<Priimek1>TESTNA KARTICA</Priimek1>
+									<Ime1>JOHANCA</Ime1>
+								</ImeZdravnika>
+							</Zdravnik>
+							<ZavarovanaOseba>
+								<ZZZSStevilka>911000705</ZZZSStevilka>
+								<SifraZavarovalnePodlageIzOZZ sifra="001000"/>
+								<SifraIzpostaveLokacijeZaposlitve sifra="18"/>
+								<ImeOsebe>
+									<Priimek1>NADOMESTILO</Priimek1>
+									<Ime1>DALIBORKA</Ime1>
+								</ImeOsebe>
+								<DatumRojstva>1994-01-15</DatumRojstva>
+							</ZavarovanaOseba>
+							<PovezanaOseba>
+								<SifraVrstePovezaneOsebe sifra="2"/>
+								<ImeOsebe>
+									<Priimek1>NADOMESTILO</Priimek1>
+									<Ime1>ALEŠ</Ime1>
+								</ImeOsebe>
+								<DatumRojstva>2009-01-15</DatumRojstva>
+							</PovezanaOseba>
+							<PrviDanZadrzanosti>
+								<DatumPrvegaDneZadrzanosti>2019-04-01</DatumPrvegaDneZadrzanosti>
+							</PrviDanZadrzanosti>
+							<ZadnjiDanZadrzanosti>
+								<ZaDiagnozo>true</ZaDiagnozo>
+								<ZaRazlog>true</ZaRazlog>
+								<ZaPlacnika>true</ZaPlacnika>
+							</ZadnjiDanZadrzanosti>
+							<Zavezanec>
+								<RegistrskaStevilka>5018007103</RegistrskaStevilka>
+								<ZaporednaStevilkaPotrdila>1</ZaporednaStevilkaPotrdila>
+								<NazivZavezanca>SPIN POSLOVNA INFORMATIKA D.O.O.</NazivZavezanca>
+								<SifraDejavnosti sifra="62.020"/>
+							</Zavezanec>
+							<NapotitevNaInvalidskoKomisijo>
+								<DatumNapotitve>2018-07-01</DatumNapotitve>
+								<OznakaZakljuckaPostopkaInvalidskeKomisije>false</OznakaZakljuckaPostopkaInvalidskeKomisije>
+							</NapotitevNaInvalidskoKomisijo>
+							<CasZadrzanostiOdDela>
+								<ZadrzanostZaPolniDelovniCas>
+									<DatumOd>2019-04-01</DatumOd>
+									<DatumDo>2019-04-15</DatumDo>
+								</ZadrzanostZaPolniDelovniCas>
+								<ZadrzanostZaKrajsiDelovniCas>
+									<DatumOd>2019-04-16</DatumOd>
+									<DatumDo>2019-04-30</DatumDo>
+								</ZadrzanostZaKrajsiDelovniCas>
+								<SteviloUrDelovneObveznostiNaDan>4</SteviloUrDelovneObveznostiNaDan>
+								<SteviloUrZadrzanostiNaDan>4</SteviloUrZadrzanostiNaDan>
+							</CasZadrzanostiOdDela>
+							<RazlogZadrzanosti>
+								<SifraRazlogaZadrzanosti sifra="6"/>
+								<DatumPrvegaDneZadrzanostiZaRazlog>2019-04-01</DatumPrvegaDneZadrzanostiZaRazlog>
+							</RazlogZadrzanosti>
+							<KategorijaInvalidnosti sifra="2"/>
+							<DatumIzdajePotrdila>2019-07-07</DatumIzdajePotrdila>
+							<KrajIzdajePotrdila>TRBOVLJE</KrajIzdajePotrdila>
+							<Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+								<SignedInfo>
+									<CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+									<SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+									<Reference URI="#RND-7e4ba1d0-ecdc-448a-b649-bfe5b10b3588">
+										<Transforms>
+											<Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+											<Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+										</Transforms>
+										<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+										<DigestValue>Ob4salNdwI+mXvOQySLh2WaDZEIwMqYn8vpA/9uJQUk=</DigestValue>
+									</Reference>
+								</SignedInfo>
+								<SignatureValue>Wadv58Y0PzTtJL7mS9L84VXg1yUhiuoNXGrVhKIac0fDCK1YWColGXzttNlGR+Z1dgj2LYwN/5OE2N8onWnL4RHbLCagensJOq0pdOhJy2srkMTP4JDEgFg+/go2bZDO9bFSgRR69gXjXIcX9HIo4iEStnuDSyd06m5rRQ3nhyysVoKPvancxntzgeFpJuNrOcIVDHW+n1BbJ38OLP07pFK4KYWROBl1LUfe72PbIgzQan/XWJ+qoihGzHg/pQvUegJ2sg2xpFV7ZA5/4gQcA50sFEMyDmJXOUVv/83hHSjOucJ6nO5DaITrGhaYw9OZIwqXXL9FraBo0ZdJ3DvL4w==</SignatureValue>
+								<KeyInfo>
+									<X509Data>
+										<X509IssuerSerial>
+											<X509IssuerName>O=postaca, C=SI</X509IssuerName>
+											<X509SerialNumber>21063916601131264929681222089</X509SerialNumber>
+										</X509IssuerSerial>
+										<X509SubjectName>SERIALNUMBER=2017012304 + CN=KZZ 02 TESTNA, OU=person, O=POSTACA, C=SI</X509SubjectName>
+										<X509Certificate>MIIFAjCCA+qgAwIBAgIMRA+p1wAAAABGYanJMA0GCSqGSIb3DQEBCwUAMB8xCzAJBgNVBAYTAlNJMRAwDgYDVQQKEwdwb3N0YWNhMB4XDTE3MDEzMDEyMzUwNVoXDTIyMDEzMDEzMDUwNVowWzELMAkGA1UEBhMCU0kxEDAOBgNVBAoTB1BPU1RBQ0ExDzANBgNVBAsTBnBlcnNvbjEpMBEGA1UEBRMKMjAxNzAxMjMwNDAUBgNVBAMTDUtaWiAwMiBURVNUTkEwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC57G5vDnz/9vCphSJxLDmHlNTtoc7Sr1nEizRi61NF5aEZdN2WvdTs22OzlCKUQ/wg2O3t+ArGs8qMT6xZMGKk1u1RYfsPV9gQcfXuOj8vgI5MCtTTTOoZg2X0W5MgzABoYMma+O5xdavtj1JZS1N6rEvBgDhDaV9uDrP0qIcwvLO4PerIsBE05ssdH53KmgZAlOvl06GYDmX072ESB9X/ezQBUYgfeAsU7jsPPVweoi07jT/hSqgXWEuAZ3M/Crn4jpYfusc79steBOnWmsupNStJ+IUibCiFds9RRY0en4lFiSyBVGf/JTjqfmUCZ7eurm/9gk1qQmUVUchrCztdAgMBAAGjggIAMIIB/DAOBgNVHQ8BAf8EBAMCBaAwGAYKKwYBBAH3NAoCAQQKFgg5OTk5OTc5MDBWBgNVHSAETzBNMEEGDSsGAQQB9zQBAQICAgEwMDAuBggrBgEFBQcCARYiaHR0cDovL3Bvc3RhcmNhLnBvc3RhLnNpL2Rva3VtZW50aTAIBgYEAIswAQIwGAYIKwYBBQUHAQMEDDAKMAgGBgQAjkYBATAXBgNVHREEEDAOgQx0ZXN0QHp6enMuc2kwgbEGA1UdHwSBqTCBpjA2oDSgMqQwMC4xCzAJBgNVBAYTAlNJMRAwDgYDVQQKEwdwb3N0YWNhMQ0wCwYDVQQDEwRDUkwzMGygaqBohj9sZGFwOi8vZGVtb2NhLnBvc3RhLnNpL289cG9zdGFjYSxjPVNJP2NlcnRpZmljYXRlUmV2b2NhdGlvbkxpc3SGJWh0dHA6Ly9kZW1vY2EucG9zdGEuc2kvY3JsL2RlbW9jYS5jcmwwKwYDVR0QBCQwIoAPMjAxNzAxMzAxMjM1MDVagQ8yMDIyMDEzMDEzMDUwNVowHwYDVR0jBBgwFoAUi3TzAQAA0iv2H8N2ihEmdmOVUO8wHQYDVR0OBBYEFPQLZLFetSdb36WrQnfKMDYCVgEuMAkGA1UdEwQCMAAwGQYJKoZIhvZ9B0EABAwwChsEVjguMQMCA6gwDQYJKoZIhvcNAQELBQADggEBAAQ35x8aHPtqghG3HjZDz39mmDO7nGK9pzMh/blPNo+U9VnJOM1p35OvwWnQVngDzXFQ5LGO9lngQaFHOyw6eZx1AKsAWZxftqpwcT9hRayCHHfhDa4guHceIgEkJbiWdiwgnkyQ3tGbSNY85xNsKPMsWYrFCti6959WimY/VxZ/BiXigQz5lDCM55pFx0PyszXy55ACxOXmKlbktBjkWTuzRDOhLXEwUqHyTU7WuuJu7EIDPUSh4lm7LpyCeHEG4PPqcC9ok/uz8JO4xy+FmbP+IxnBUDjmS65rFU8ZAKm7jxsMZIT5UloxpwpO1XJsW4XIxJs8qKArIC8M3Jt8N30=</X509Certificate>
+									</X509Data>
+								</KeyInfo>
+							</Signature>
+						</Podatki>
+					</onlC:PotrdiloOZadrzanostiOdDela>]]]]><![CDATA[>
+				</Vsebina>
+			</EBOL>
+		</EBOLi>
+	</Telo>
+</ebol:GetEBOLResponse>]]></ns:getEBolPDF>
+   </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OddajVlogoReq xmlns="http://www.src.si/schemas/evem/ndm/20160107" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<EvemNDMDocument>
+		<Info datumPriprave="2001-12-17T09:30:47.0Z"  oznakaDokumenta="111222333444">
+			<Referent email="String" telefon="String" priimek="String"  ime="String"/>
+		</Info>
+		<Zahtevek><xmlZahtevka><![CDATA[
+		<!-- podpisan XML zahtevekExtended -->
+]]]]><![CDATA[></xmlZahtevka></Zahtevek>
+		<Priloga id="_1"><![CDATA[<!-- podpisan XML priloge -->
+]]]]><![CDATA[></Priloga>
+		<Priloga id="_2"><![CDATA[
+		<!-- podpisan XML priloge -->
+]]]]><![CDATA[></Priloga>
+</EvemNDMDocument>
+</OddajVlogoReq>

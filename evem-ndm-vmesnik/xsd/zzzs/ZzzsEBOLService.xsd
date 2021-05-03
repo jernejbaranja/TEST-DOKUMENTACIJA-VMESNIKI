@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2007 rel. 3 (http://www.altova.com) by Tadej Poljsak (ZZZS Informacijski center) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ws="http://zzzs.si/b2b/nsk/wsGlobalTypes" xmlns:nvg="http://zzzs.si/b2b/nvg/ZzzsEBOLService" xmlns:nbo="http://zzzs.si/b2b/nbo/globalTypes" xmlns:noz="http://zzzs.si/b2b/noz/globalTypes" xmlns:crea="http://www.crea.si/Schemas/2004/Document" xmlns:nsk="http://zzzs.si/b2b/nbo/globalTypes" targetNamespace="http://zzzs.si/b2b/nvg/ZzzsEBOLService" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="1.3">
+	<xs:import namespace="http://zzzs.si/b2b/nsk/wsGlobalTypes" schemaLocation="NSKDataTypesDefinitions.xsd"/>
+	<xs:import namespace="http://zzzs.si/b2b/nbo/globalTypes" schemaLocation="NBODataTypesDefinitions.xsd"/>
+	<xs:import namespace="http://zzzs.si/b2b/noz/globalTypes" schemaLocation="NOZDataTypesDefinitions.xsd"/>
+	<!--Vhodna in izhodna sporočila spletne storitve-->
+	<xs:complexType name="tGetListMeseciRequest">
+		<xs:annotation>
+			<xs:documentation>Zahtevek za pridobitev seznama mesecev zadržanosti, za katere obstajajo eBOL</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Glava" type="ws:tGlavaRequest">
+				<xs:annotation>
+					<xs:documentation>Glava standardnega zahtevka/odgovora SOAP sporočila</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Telo">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="MaticnaStevilka" type="noz:MatStevPRSType">
+							<xs:annotation>
+								<xs:documentation>Matična številka zavezanca</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="Pooblastila" type="nbo:tPooblastila">
+							<xs:annotation>
+								<xs:documentation>Pooblastila za pridobivanje podatkov</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="DcObdobjaOd" type="ws:tDatumCas">
+							<xs:annotation>
+								<xs:documentation>Datum in čas začetka obdobja</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="DcObdobjaDo" type="ws:tDatumCas">
+							<xs:annotation>
+								<xs:documentation>Datum in čas konca obdobja</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tGetListMeseciResponse">
+		<xs:annotation>
+			<xs:documentation>Odgovor na zahtevek za pridobitev seznama mesecev zadržanosti, za katere obstajajo eBOL</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Glava" type="nbo:tGlavaResponse">
+				<xs:annotation>
+					<xs:documentation>Glava standardnega zahtevka/odgovora SOAP sporočila</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Telo" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="LetoMesec" type="nbo:tLetoMesecResponse" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tGetListEBOLRequest">
+		<xs:annotation>
+			<xs:documentation>Zahtevek za pridobitev seznama eBOL</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Glava" type="ws:tGlavaRequest">
+				<xs:annotation>
+					<xs:documentation>Glava standardnega zahtevka/odgovora SOAP sporočila</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Telo">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="MaticnaStevilka" type="noz:MatStevPRSType">
+							<xs:annotation>
+								<xs:documentation>Matična številka zavezanca</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="Stran" type="nbo:tStran">
+							<xs:annotation>
+								<xs:documentation>Zahtevana številka strani na seznamu</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:choice>
+							<xs:element name="NacinA1" type="nvg:tNacinA1_B1">
+								<xs:annotation>
+									<xs:documentation>Način iskanja za potrebe vmesnika eBOL in eNDM</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="NacinB1" type="nvg:tNacinA1_B1">
+								<xs:annotation>
+									<xs:documentation>Način iskanja za potrebe prevzemanja eBOL na portalu e-VEM</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="NacinB2" type="nvg:tNacinB2">
+								<xs:annotation>
+									<xs:documentation>Način iskanja za potrebe prevzemanja eBOL na portalu e-VEM</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="NacinB3" type="nvg:tNacinB3">
+								<xs:annotation>
+									<xs:documentation>Način iskanja za potrebe prevzemanja eBOL na portalu e-VEM</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="NacinC1" type="nvg:tNacinC1">
+								<xs:annotation>
+									<xs:documentation>Način iskanja za potrebe eZahtevka za refundacijo nadomestila plače na portalu e-VEM</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:choice>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tGetListEBOLResponse">
+		<xs:annotation>
+			<xs:documentation>Odgovor na zahtevek za pridobitev seznama eBOL</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Glava" type="nbo:tGlavaResponse">
+				<xs:annotation>
+					<xs:documentation>Glava standardnega zahtevka/odgovora SOAP sporočila</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Telo" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="SteviloStrani" type="nbo:tSteviloStrani">
+							<xs:annotation>
+								<xs:documentation>Število strani na seznamu</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="BolniskiListi" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="BolniskiList" maxOccurs="unbounded">
+										<xs:annotation>
+											<xs:documentation>Podatki bolniškega lista</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:complexContent>
+												<xs:extension base="nbo:tBolniskiList"/>
+											</xs:complexContent>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tGetEBOLRequest">
+		<xs:annotation>
+			<xs:documentation>Zahtevek za pridobitev eBOL</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Glava" type="ws:tGlavaRequest">
+				<xs:annotation>
+					<xs:documentation>Glava standardnega zahtevka/odgovora SOAP sporočila</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Telo">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="MaticnaStevilka" type="noz:MatStevPRSType">
+							<xs:annotation>
+								<xs:documentation>Matična številka zavezanca</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="EBOLi">
+							<xs:annotation>
+								<xs:documentation>Seznam identifikatorjev bolniških listov</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="EBOL" maxOccurs="50">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="IdBolniskiList" type="nbo:tIdBolniskiList">
+													<xs:annotation>
+														<xs:documentation>Številka bolniškega lista</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element name="OznakaBolniskegaLista" type="nbo:tOznakaBolniskegaLista">
+													<xs:annotation>
+														<xs:documentation>Oznaka bolniškega lista (1 - redni, 2 - preklic)</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tGetEBOLResponse">
+		<xs:annotation>
+			<xs:documentation>Odgovor na zahtevek za pridobitev eBOL</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Glava" type="nbo:tGlavaResponse">
+				<xs:annotation>
+					<xs:documentation>Glava standardnega zahtevka/odgovora SOAP sporočila</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Telo" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="EBOLi">
+							<xs:annotation>
+								<xs:documentation>Seznam bolniških listov</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="EBOL" type="nbo:tEBOL" maxOccurs="50">
+										<xs:annotation>
+											<xs:documentation>Podatki bolniškega lista</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tNacinA1_B1">
+		<xs:annotation>
+			<xs:documentation>Zahtevek za pridobitev seznama eBOL</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Pooblastila" type="nbo:tPooblastila">
+				<xs:annotation>
+					<xs:documentation>Pooblastila za pridobivanje podatkov</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DcObdobjaOd" type="ws:tDatumCas">
+				<xs:annotation>
+					<xs:documentation>Datum in čas začetka obdobja</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DcObdobjaDo" type="ws:tDatumCas">
+				<xs:annotation>
+					<xs:documentation>Datum in čas konca obdobja</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LetoMesec" type="nbo:tLetoMesecRequest">
+				<xs:annotation>
+					<xs:documentation>Leto in mesec zadržanosti</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tNacinB2">
+		<xs:annotation>
+			<xs:documentation>Zahtevek za pridobitev seznama eBOL</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Pooblastila" type="nbo:tPooblastila">
+				<xs:annotation>
+					<xs:documentation>Pooblastila za pridobivanje podatkov</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LetoMesec" type="nbo:tLetoMesecRequest">
+				<xs:annotation>
+					<xs:documentation>Leto in mesec zadržanosti</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tNacinB3">
+		<xs:annotation>
+			<xs:documentation>Zahtevek za pridobitev seznama eBOL</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Pooblastila" type="nbo:tPooblastila" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Pooblastila za pridobivanje podatkov</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DcObdobjaOd" type="ws:tDatumCas">
+				<xs:annotation>
+					<xs:documentation>Datum in čas začetka obdobja</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DcObdobjaDo" type="ws:tDatumCas">
+				<xs:annotation>
+					<xs:documentation>Datum in čas konca obdobja</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:choice>
+				<xs:element name="Emso" type="noz:EmsoType">
+					<xs:annotation>
+						<xs:documentation>Enotna matična številka osebe</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ZzzsStevilka">
+					<xs:annotation>
+						<xs:documentation>ZZZS številka osebe</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="noz:ZzzsStevilkaType">
+							<xs:minInclusive value="20000000"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="DavcnaStevilka" type="noz:DavcnaStevilkaType">
+					<xs:annotation>
+						<xs:documentation>Davčna številka osebe</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tNacinC1">
+		<xs:annotation>
+			<xs:documentation>Zahtevek za pridobitev seznama eBOL</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="LetoMesec" type="nbo:tLetoMesecRequest">
+				<xs:annotation>
+					<xs:documentation>Leto in mesec zadržanosti</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:choice>
+				<xs:element name="Emso" type="noz:EmsoType">
+					<xs:annotation>
+						<xs:documentation>Enotna matična številka osebe</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ZzzsStevilka">
+					<xs:annotation>
+						<xs:documentation>ZZZS številka osebe</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="noz:ZzzsStevilkaType">
+							<xs:minInclusive value="20000000"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="DavcnaStevilka" type="noz:DavcnaStevilkaType">
+					<xs:annotation>
+						<xs:documentation>Davčna številka osebe</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<!--Globalni elementi (potrebni za WSDL)-->
+	<xs:element name="GetListMeseciRequest" type="nvg:tGetListMeseciRequest"/>
+	<xs:element name="GetListMeseciResponse" type="nvg:tGetListMeseciResponse"/>
+	<xs:element name="GetListEBOLRequest" type="nvg:tGetListEBOLRequest"/>
+	<xs:element name="GetListEBOLResponse" type="nvg:tGetListEBOLResponse"/>
+	<xs:element name="GetEBOLRequest" type="nvg:tGetEBOLRequest"/>
+	<xs:element name="GetEBOLResponse" type="nvg:tGetEBOLResponse"/>
+</xs:schema>

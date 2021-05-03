@@ -1,0 +1,7 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <soapenv:Body>
+      <SubmitVlogaRes xmlns="http://www.src.si/schemas/evem/ndm/wsdl/20160107">
+         <evem-st>0702-45-20160701-000001</evem-st>
+      </SubmitVlogaRes>
+   </soapenv:Body>
+</soapenv:Envelope>
