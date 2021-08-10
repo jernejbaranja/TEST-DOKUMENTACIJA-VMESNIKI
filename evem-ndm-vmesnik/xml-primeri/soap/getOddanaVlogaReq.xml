@@ -1,9 +1,0 @@
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.src.si/schemas/evem/ndm/wsdl/20160107">
-   <soapenv:Header/>
-   <soapenv:Body>
-      <ns:GetOddanaVlogaReq>
-         <ns:evem-st>0702-44-20160518-000002</ns:evem-st>
-         <ns:ms>1447190000</ns:ms>
-      </ns:GetOddanaVlogaReq>
-   </soapenv:Body>
-</soapenv:Envelope>

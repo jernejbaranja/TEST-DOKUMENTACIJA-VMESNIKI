@@ -1,6 +1,0 @@
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-   <soapenv:Body>
-      <statusiVlogRes xmlns="http://www.src.si/schemas/evem/ndm/wsdl/20160107"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
-<ns:StatusiVlogRes xmlns:ns="http://www.src.si/schemas/evem/ndm/20160107"><ns:vloga evem-st="0702-44-20160518-000002" ms="1447190000"><ns:status id="107"><ns:opis>Vloga je bila vnešena v vrsto in èaka na pošiljanje.</ns:opis></ns:status></ns:vloga><ns:vloga evem-st="0702-44-20160518-000003" ms="1447190000"><ns:status id="107"><ns:opis>Vloga je bila vnešena v vrsto in èaka na pošiljanje.</ns:opis></ns:status></ns:vloga><ns:vloga evem-st="0702-44-20160518-000004" ms="5554195000"><ns:status id="107"><ns:opis>Vloga je bila vnešena v vrsto in èaka na pošiljanje.</ns:opis></ns:status></ns:vloga><ns:vloga evem-st="0702-45-20160620-000001" ms="8719143100"><ns:status id="104"><ns:opis>Vloga èaka na obdelavo sistema eVEM.</ns:opis></ns:status></ns:vloga><ns:vloga evem-st="0702-45-20160620-000010" ms="1234567891"><ns:status id="-1"><ns:opis>Vloga ne obstaja oz. uporabnik nima pravice za dostop do statusa vloga.</ns:opis></ns:status></ns:vloga></ns:StatusiVlogRes>]]></statusiVlogRes>
-   </soapenv:Body>
-</soapenv:Envelope>
